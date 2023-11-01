@@ -20,7 +20,7 @@ const uint8_t segmentPatterns[10] = {
     0b01111101,  // 6
     0b00000111,  // 7
     0b01111111,  // 8
-    0b01101111   // 9
+    0b01101111   // 9 
 };
 
 void delay(unsigned int ms) {
