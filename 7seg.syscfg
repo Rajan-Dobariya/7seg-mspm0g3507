@@ -1,0 +1,105 @@
+/**
+ * These arguments were used when this file was generated. They will be automatically applied on subsequent loads
+ * via the GUI or CLI. Run CLI with '--help' for additional information on how to override these arguments.
+ */
+// @cliArgs --device "MSPM0G350X" --package "LQFP-64(PM)" --part "Default"
+// @cliArgs --board /ti/boards/LP_MSPM0G3507 --rtos nortos
+
+/**
+ * Import the modules used in this configuration.
+ */
+const GPIO = scripting.addModule("/ti/driverlib/GPIO", {}, false);
+const GPIO1 = GPIO.addInstance();
+const GPIO2 = GPIO.addInstance();
+//const GPIO3 = 
+const SYSCTL = scripting.addModule("/ti/driverlib/SYSCTL");
+
+
+/**
+ * Write custom configuration values to the imported modules.
+ */
+GPIO1.$name = "SEGMENT_DISPLAY_1";
+GPIO1.associatedPins.create(7); // Assuming you have 7 segment pins
+
+//GPIO pin assignments for 7-segment display 
+
+//GPIO1.port                           = "PORTA";
+GPIO1.associatedPins[0].$name = "SEG_A";
+//GPIO1.associatedPins[0].assignedPort = "PORTA";
+GPIO1.associatedPins[0].assignedPin = "8";
+GPIO1.associatedPins[0].pin.$assign = "PA8";
+
+GPIO1.associatedPins[1].$name = "SEG_B";
+//GPIO1.associatedPins[1].assignedPort = "PORTA";
+GPIO1.associatedPins[1].assignedPin = "9";
+GPIO1.associatedPins[1].pin.$assign = "PA9";
+
+GPIO1.associatedPins[2].$name = "SEG_C";
+//GPIO1.associatedPins[2].assignedPort = "PORTA";
+GPIO1.associatedPins[2].assignedPin = "10";
+GPIO1.associatedPins[2].pin.$assign = "PA10";
+
+GPIO1.associatedPins[3].$name = "SEG_D";
+//GPIO1.associatedPins[3].assignedPort = "PORTA";
+GPIO1.associatedPins[3].assignedPin = "11";
+GPIO1.associatedPins[3].pin.$assign = "PA11";
+
+GPIO1.associatedPins[4].$name = "SEG_E";
+//GPIO1.associatedPins[4].assignedPort = "PORTA";
+GPIO1.associatedPins[4].assignedPin = "12";
+GPIO1.associatedPins[4].pin.$assign = "PA12";
+
+GPIO1.associatedPins[5].$name = "SEG_F";
+//GPIO1.associatedPins[5].assignedPort = "PORTA";
+GPIO1.associatedPins[5].assignedPin = "13";
+GPIO1.associatedPins[5].pin.$assign = "PA13";
+
+GPIO1.associatedPins[6].$name = "SEG_G";
+//GPIO1.associatedPins[6].assignedPort = "PORTA";
+GPIO1.associatedPins[6].assignedPin = "15";
+GPIO1.associatedPins[6].pin.$assign = "PA15";
+
+
+const Board = scripting.addModule("/ti/driverlib/Board", {}, false);
+
+GPIO2.$name = "SEGMENT_DISPLAY_2"; // Name for the second 7-segment display
+GPIO2.associatedPins.create(7);
+
+//GPIO2.port                           = "PORTA";
+GPIO2.associatedPins[0].$name = "SEG_H";
+//GPIO1.associatedPins[0].assignedPort = "PORTA";
+GPIO2.associatedPins[0].assignedPin = "16";
+GPIO2.associatedPins[0].pin.$assign = "PA16";
+
+GPIO2.associatedPins[1].$name = "SEG_I";
+//GPIO1.associatedPins[1].assignedPort = "PORTA";
+GPIO2.associatedPins[1].assignedPin = "17";
+GPIO2.associatedPins[1].pin.$assign = "PA17";
+
+GPIO2.associatedPins[2].$name = "SEG_J";
+//GPIO1.associatedPins[2].assignedPort = "PORTA";
+GPIO2.associatedPins[2].assignedPin = "18";
+GPIO2.associatedPins[2].pin.$assign = "PA18";
+
+GPIO2.associatedPins[3].$name = "SEG_K";
+//GPIO1.associatedPins[3].assignedPort = "PORTA";
+GPIO2.associatedPins[3].assignedPin = "22";
+GPIO2.associatedPins[3].pin.$assign = "PA22";
+
+GPIO2.associatedPins[4].$name = "SEG_L";
+//GPIO1.associatedPins[4].assignedPort = "PORTA";
+GPIO2.associatedPins[4].assignedPin = "25";
+GPIO2.associatedPins[4].pin.$assign = "PA25";
+
+GPIO2.associatedPins[5].$name = "SEG_M";
+//GPIO1.associatedPins[5].assignedPort = "PORTA";
+GPIO2.associatedPins[5].assignedPin = "26";
+GPIO2.associatedPins[5].pin.$assign = "PA26";
+
+GPIO2.associatedPins[6].$name = "SEG_N";
+//GPIO1.associatedPins[6].assignedPort = "PORTA";
+GPIO2.associatedPins[6].assignedPin = "27";
+GPIO2.associatedPins[6].pin.$assign = "PA27";
+
+
+SYSCTL.MFCLKEn = true;
