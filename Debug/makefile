@@ -133,7 +133,11 @@ all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 7seg-mspm0g3507.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: Arm Linker'
+<<<<<<< HEAD
 	"C:/ti/ccstheia110/ccs/tools/compiler/ti-cgt-armllvm_2.1.3.LTS/bin/tiarmclang.exe" -march=thumbv6m -mcpu=cortex-m0plus -mfloat-abi=soft -mlittle-endian -mthumb -O2 -D__MSPM0G3507__ -gdwarf-3 -Wl,-m"7seg-mspm0g3507.map" -Wl,-i"C:/Users/rajan/7seg-mspm0g3507/Debug/syscfg" -Wl,-i"C:/ti/ccstheia110/ccs/tools/compiler/ti-cgt-armllvm_2.1.3.LTS/lib" -Wl,--diag_wrap=off -Wl,--display_error_number -Wl,--warn_sections -Wl,--xml_link_info="7seg-mspm0g3507_linkInfo.xml" -Wl,--rom_model -o "7seg-mspm0g3507.out" $(ORDERED_OBJS)
+=======
+	"C:/ti/ccstheia110/ccs/tools/compiler/ti-cgt-armllvm_2.1.3.LTS/bin/tiarmclang.exe" -march=thumbv6m -mcpu=cortex-m0plus -mfloat-abi=soft -mlittle-endian -mthumb -O2 -D__MSPM0G3507__ -gdwarf-3 -Wl,-m"7seg-mspm0g3507.map" -Wl,-i"C:/Users/rajan/workspace_ccstheia/7seg-mspm0g3507/Debug/syscfg" -Wl,-i"C:/ti/ccstheia110/ccs/tools/compiler/ti-cgt-armllvm_2.1.3.LTS/lib" -Wl,--diag_wrap=off -Wl,--display_error_number -Wl,--warn_sections -Wl,--xml_link_info="7seg-mspm0g3507_linkInfo.xml" -Wl,--rom_model -o "7seg-mspm0g3507.out" $(ORDERED_OBJS)
+>>>>>>> 9eab5563b42f49654585804cf86c1ee1b533c8b9
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
