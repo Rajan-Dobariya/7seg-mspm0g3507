@@ -8,22 +8,14 @@ SHELL = cmd.exe
 %.o: ../%.c $(GEN_OPTS) | $(GEN_FILES) $(GEN_MISC_FILES)
 	@echo 'Building file: "$<"'
 	@echo 'Invoking: Arm Compiler'
-<<<<<<< HEAD
 	"C:/ti/ccstheia110/ccs/tools/compiler/ti-cgt-armllvm_2.1.3.LTS/bin/tiarmclang.exe" -c -march=thumbv6m -mcpu=cortex-m0plus -mfloat-abi=soft -mlittle-endian -mthumb -O2 -I"C:/Users/rajan/7seg-mspm0g3507" -I"C:/Users/rajan/7seg-mspm0g3507/Debug" -I"C:/ti/mspm0_sdk_1_20_00_05/source/third_party/CMSIS/Core/Include" -I"C:/ti/mspm0_sdk_1_20_00_05/source" -D__MSPM0G3507__ -gdwarf-3 -MMD -MP -MF"$(basename $(<F)).d_raw" -MT"$(@)" -I"C:/Users/rajan/7seg-mspm0g3507/Debug/syscfg"  $(GEN_OPTS__FLAG) -o"$@" "$<"
-=======
-	"C:/ti/ccstheia110/ccs/tools/compiler/ti-cgt-armllvm_2.1.3.LTS/bin/tiarmclang.exe" -c -march=thumbv6m -mcpu=cortex-m0plus -mfloat-abi=soft -mlittle-endian -mthumb -O2 -I"C:/Users/rajan/workspace_ccstheia/7seg-mspm0g3507" -I"C:/Users/rajan/workspace_ccstheia/7seg-mspm0g3507/Debug" -I"C:/ti/mspm0_sdk_1_20_00_05/source/third_party/CMSIS/Core/Include" -I"C:/ti/mspm0_sdk_1_20_00_05/source" -D__MSPM0G3507__ -gdwarf-3 -MMD -MP -MF"$(basename $(<F)).d_raw" -MT"$(@)" -I"C:/Users/rajan/workspace_ccstheia/7seg-mspm0g3507/Debug/syscfg"  $(GEN_OPTS__FLAG) -o"$@" "$<"
->>>>>>> 9eab5563b42f49654585804cf86c1ee1b533c8b9
 	@echo 'Finished building: "$<"'
 	@echo ' '
 
 build-1012390049: ../7seg.syscfg
 	@echo 'Building file: "$<"'
 	@echo 'Invoking: SysConfig'
-<<<<<<< HEAD
 	"C:/ti/sysconfig_1.18.0/sysconfig_cli.bat" -s "C:/ti/mspm0_sdk_1_20_00_05/.metadata/product.json" --script "C:/Users/rajan/7seg-mspm0g3507/7seg.syscfg" -o "syscfg" --compiler ticlang
-=======
-	"C:/ti/sysconfig_1.18.0/sysconfig_cli.bat" -s "C:/ti/mspm0_sdk_1_20_00_05/.metadata/product.json" --script "C:/Users/rajan/workspace_ccstheia/7seg-mspm0g3507/7seg.syscfg" -o "syscfg" --compiler ticlang
->>>>>>> 9eab5563b42f49654585804cf86c1ee1b533c8b9
 	@echo 'Finished building: "$<"'
 	@echo ' '
 
@@ -35,11 +27,7 @@ syscfg/: build-1012390049
 syscfg/%.o: ./syscfg/%.c $(GEN_OPTS) | $(GEN_FILES) $(GEN_MISC_FILES)
 	@echo 'Building file: "$<"'
 	@echo 'Invoking: Arm Compiler'
-<<<<<<< HEAD
 	"C:/ti/ccstheia110/ccs/tools/compiler/ti-cgt-armllvm_2.1.3.LTS/bin/tiarmclang.exe" -c -march=thumbv6m -mcpu=cortex-m0plus -mfloat-abi=soft -mlittle-endian -mthumb -O2 -I"C:/Users/rajan/7seg-mspm0g3507" -I"C:/Users/rajan/7seg-mspm0g3507/Debug" -I"C:/ti/mspm0_sdk_1_20_00_05/source/third_party/CMSIS/Core/Include" -I"C:/ti/mspm0_sdk_1_20_00_05/source" -D__MSPM0G3507__ -gdwarf-3 -MMD -MP -MF"syscfg/$(basename $(<F)).d_raw" -MT"$(@)" -I"C:/Users/rajan/7seg-mspm0g3507/Debug/syscfg"  $(GEN_OPTS__FLAG) -o"$@" "$<"
-=======
-	"C:/ti/ccstheia110/ccs/tools/compiler/ti-cgt-armllvm_2.1.3.LTS/bin/tiarmclang.exe" -c -march=thumbv6m -mcpu=cortex-m0plus -mfloat-abi=soft -mlittle-endian -mthumb -O2 -I"C:/Users/rajan/workspace_ccstheia/7seg-mspm0g3507" -I"C:/Users/rajan/workspace_ccstheia/7seg-mspm0g3507/Debug" -I"C:/ti/mspm0_sdk_1_20_00_05/source/third_party/CMSIS/Core/Include" -I"C:/ti/mspm0_sdk_1_20_00_05/source" -D__MSPM0G3507__ -gdwarf-3 -MMD -MP -MF"syscfg/$(basename $(<F)).d_raw" -MT"$(@)" -I"C:/Users/rajan/workspace_ccstheia/7seg-mspm0g3507/Debug/syscfg"  $(GEN_OPTS__FLAG) -o"$@" "$<"
->>>>>>> 9eab5563b42f49654585804cf86c1ee1b533c8b9
 	@echo 'Finished building: "$<"'
 	@echo ' '
 
