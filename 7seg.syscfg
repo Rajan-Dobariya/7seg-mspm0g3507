@@ -23,7 +23,7 @@ GPIO1.associatedPins.create(7); // Assuming you have 7 segment pins
 
 //GPIO pin assignments for 7-segment display 
 
-//GPIO1.port                           = "PORTA";
+GPIO1.port                           = "PORTA";
 GPIO1.associatedPins[0].$name = "SEG_A";
 //GPIO1.associatedPins[0].assignedPort = "PORTA";
 GPIO1.associatedPins[0].assignedPin = "8";
@@ -65,7 +65,7 @@ const Board = scripting.addModule("/ti/driverlib/Board", {}, false);
 GPIO2.$name = "SEGMENT_DISPLAY_2"; // Name for the second 7-segment display
 GPIO2.associatedPins.create(7);
 
-//GPIO2.port                           = "PORTA";
+GPIO2.port                           = "PORTA";
 GPIO2.associatedPins[0].$name = "SEG_H";
 //GPIO1.associatedPins[0].assignedPort = "PORTA";
 GPIO2.associatedPins[0].assignedPin = "16";

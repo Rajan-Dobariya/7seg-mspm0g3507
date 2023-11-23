@@ -1,19 +1,15 @@
 #include "ti_msp_dl_config.h"
 
 
+uint32_t Mask1 = SEGMENT_DISPLAY_1_SEG_A_PIN | SEGMENT_DISPLAY_1_SEG_B_PIN | SEGMENT_DISPLAY_1_SEG_C_PIN | SEGMENT_DISPLAY_1_SEG_D_PIN | SEGMENT_DISPLAY_1_SEG_E_PIN | SEGMENT_DISPLAY_1_SEG_F_PIN | SEGMENT_DISPLAY_1_SEG_G_PIN;
+uint32_t Mask2 = SEGMENT_DISPLAY_2_SEG_H_PIN | SEGMENT_DISPLAY_2_SEG_I_PIN | SEGMENT_DISPLAY_2_SEG_J_PIN | SEGMENT_DISPLAY_2_SEG_K_PIN | SEGMENT_DISPLAY_2_SEG_L_PIN | SEGMENT_DISPLAY_2_SEG_M_PIN | SEGMENT_DISPLAY_2_SEG_N_PIN;
 
-#define NUM_SEGMENTS 7  // Number of segments (a, b, c, d, e, f, g)
-#define NUM_DIGITS 2    // Number of digits
-void clearLCDMemoryTable(void);
-uint32_t gLCDMemoryTableLower[NUM_DIGITS];
-uint32_t pinsMask1 = SEGMENT_DISPLAY_1_SEG_A_PIN | SEGMENT_DISPLAY_1_SEG_B_PIN | SEGMENT_DISPLAY_1_SEG_C_PIN | SEGMENT_DISPLAY_1_SEG_D_PIN | SEGMENT_DISPLAY_1_SEG_E_PIN | SEGMENT_DISPLAY_1_SEG_F_PIN | SEGMENT_DISPLAY_1_SEG_G_PIN;
-uint32_t pinsMask2 = SEGMENT_DISPLAY_2_SEG_H_PIN | SEGMENT_DISPLAY_2_SEG_I_PIN | SEGMENT_DISPLAY_2_SEG_J_PIN | SEGMENT_DISPLAY_2_SEG_K_PIN | SEGMENT_DISPLAY_2_SEG_L_PIN | SEGMENT_DISPLAY_2_SEG_M_PIN | SEGMENT_DISPLAY_2_SEG_N_PIN;
-#define DELAY_MS 1000  // 1-second delay
+#define DELAY_MS 500  // 1-second delay
 
 // Displaying numbers 0 to 9
 const uint8_t segmentPatterns[10] = {
 // a b c d e f g
-    0b00111111,  // 0
+    0b00000000,  // 0
     0b00000110,  // 1
     0b01011011,  // 2
     0b01001111,  // 3
@@ -43,36 +39,37 @@ int main(void) {
             
             // Set the segment pattern for the first display (firsy digit)
             
-            DL_GPIO_writePinsVal(SEGMENT_DISPLAY_1_PORT, pinsMask1, segmentPatterns[first]);
+            DL_GPIO_writePinsVal(SEGMENT_DISPLAY_1_PORT, Mask1, segmentPatterns[first]);
 
             // Enable the first display
-            DL_GPIO_setPins(SEGMENT_DISPLAY_1_PORT, pinsMask1);
+            DL_GPIO_setPins(SEGMENT_DISPLAY_1_PORT, Mask1);
 
             // Delay 1 second
             delay(DELAY_MS);
 
             // Disable the first display
-            DL_GPIO_clearPins(SEGMENT_DISPLAY_1_PORT, pinsMask1);
+            DL_GPIO_clearPins(SEGMENT_DISPLAY_1_PORT, Mask1);
+
+                        // Delay 1 second
+            delay(DELAY_MS);
 
             // Set the segment pattern for the second display (second digit)
-            DL_GPIO_writePinsVal(SEGMENT_DISPLAY_2_PORT, pinsMask2, segmentPatterns[second]);
+            DL_GPIO_writePinsVal(SEGMENT_DISPLAY_2_PORT, Mask2, segmentPatterns[second]);
+
+                        // Delay 1 second
+            delay(DELAY_MS);
 
             // Enable second display
-            DL_GPIO_setPins(SEGMENT_DISPLAY_2_PORT, pinsMask2);
+            DL_GPIO_setPins(SEGMENT_DISPLAY_2_PORT, Mask2);
 
             // Delay 1 second
             delay(DELAY_MS);
 
             // Disable the second display
-            DL_GPIO_clearPins(SEGMENT_DISPLAY_2_PORT, pinsMask2);
+            DL_GPIO_clearPins(SEGMENT_DISPLAY_2_PORT, Mask2);
+
+                        // Delay 1 second
+            delay(DELAY_MS);
         }
     }
 }
-/*
-void clearLCDMemoryTable(void)
-{
-    for (int i = 0; i <= NUM_DIGITS; i++) {
-        gLCDMemoryTableLower[i] = 0;
-    }
-}
-*/
