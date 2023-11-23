@@ -4,7 +4,7 @@
 uint32_t Mask1 = SEGMENT_DISPLAY_1_SEG_A_PIN | SEGMENT_DISPLAY_1_SEG_B_PIN | SEGMENT_DISPLAY_1_SEG_C_PIN | SEGMENT_DISPLAY_1_SEG_D_PIN | SEGMENT_DISPLAY_1_SEG_E_PIN | SEGMENT_DISPLAY_1_SEG_F_PIN | SEGMENT_DISPLAY_1_SEG_G_PIN;
 uint32_t Mask2 = SEGMENT_DISPLAY_2_SEG_H_PIN | SEGMENT_DISPLAY_2_SEG_I_PIN | SEGMENT_DISPLAY_2_SEG_J_PIN | SEGMENT_DISPLAY_2_SEG_K_PIN | SEGMENT_DISPLAY_2_SEG_L_PIN | SEGMENT_DISPLAY_2_SEG_M_PIN | SEGMENT_DISPLAY_2_SEG_N_PIN;
 
-#define DELAY_MS 500  // 1-second delay
+#define DELAY_MS 1000  // 1-second delay
 
 // Displaying numbers 0 to 9
 const uint8_t segmentPatterns[10] = {
@@ -33,7 +33,7 @@ int main(void) {
     SYSCFG_DL_init();
    // clearLCDMemoryTable();
     while (1) {
-        for (int num = 0; num < 60; num++) {
+        for (int num = 00; num < 60; num++) {
             int first = num / 10;
             int second = num % 10;
             
